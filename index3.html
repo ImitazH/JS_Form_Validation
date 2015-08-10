@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> Practice</title>
+</head>
+
+<style>
+	
+	.inpBox{
+		background-color: #fff;
+		border: 1px solid #666666;
+	}	
+	
+	.inpBoxError{
+		border: 2px solid #FF0000;
+	}
+	
+	
+</style>
+
+<body>
+
+
+<form action="" onSubmit="return verify();">
+	
+	username: <input type="text" name="user" id="user" class="inpBox">
+	<br>
+	Password: <input type="password" name="pass" id="pass" class="inpBox">
+	<br>
+	<button>Submit</button>
+	
+	
+</form>
+
+
+
+<script>
+	
+	function verify(){
+		
+		var user = document.getElementById("user");
+		var pass = document.getElementById("pass");
+		var msg="";
+		
+		
+		if(user.value == ""){
+			msg += "please enter your username";
+			user.className = "inpBoxError";
+		}
+		
+		if( pass.value == ""){
+			msg += "please enter your password";
+			pass.className = "inpBoxError";
+		}
+		
+		
+		if(msg == ""){
+			return true;
+		}
+		else{
+			alert(msg);
+			return false;
+		}
+	}
+	
+</script>
+	
+</body>
+</html>
